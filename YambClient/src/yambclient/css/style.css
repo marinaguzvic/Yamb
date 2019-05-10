@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 7, 2019, 6:59:13 PM
+    Author     : MARINA
+*/
+.table-view > .column-header-background .downwards {
+    -fx-background-image: url("../images/arrows/down.png");
+    -fx-background-size: stretch;
+}
+
+.table-view > .column-header-background .upwards {
+    -fx-background-image: url("../images/arrows/up.png");
+    -fx-background-size: stretch;
+}
+
+.table-view > .column-header-background .mixed {
+    -fx-background-image: url("../images/arrows/updown.png");
+    -fx-background-size: stretch;
+}
+
+.table-view > .column-header-background .najava {
+    -fx-background-image: url("../images/arrows/najava.png");
+    -fx-background-size: stretch;
+}
+
+.table-row-cell .header {
+   -fx-background-color: #dae3f2;
+   -fx-font-weight: bold;
+    -fx-text-alignment: center;
+}
+
+.table-view .column-header {
+    -fx-background-color: #dae3f2;
+    -fx-text-alignment: center;
+}
+
+
+.highlightedRow{
+    -fx-background-color: #a2b6d8;
+}

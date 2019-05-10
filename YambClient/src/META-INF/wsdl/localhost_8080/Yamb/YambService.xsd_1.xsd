@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://web.server.silab.fon.bg.ac.rs/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://web.server.silab.fon.bg.ac.rs/">
+
+<xs:element name="processRequest" type="tns:processRequest"/>
+
+<xs:element name="processRequestResponse" type="tns:processRequestResponse"/>
+
+<xs:complexType name="processRequest">
+<xs:sequence>
+<xs:element name="name" type="tns:requestObject" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="requestObject">
+<xs:sequence>
+<xs:element name="dices" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="igraId" type="xs:long" minOccurs="0"/>
+<xs:element name="korisnickoIme" type="xs:string" minOccurs="0"/>
+<xs:element name="operation" type="xs:string" minOccurs="0"/>
+<xs:element name="selectedField" type="tns:field" minOccurs="0"/>
+<xs:element name="selectedGame" type="tns:game" minOccurs="0"/>
+<xs:element name="sifra" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="field">
+<xs:sequence>
+<xs:element name="available" type="xs:boolean"/>
+<xs:element name="column" type="xs:int"/>
+<xs:element name="row" type="xs:int"/>
+<xs:element name="rowName" type="xs:string" minOccurs="0"/>
+<xs:element name="value" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="game">
+<xs:sequence>
+<xs:element name="gameId" type="xs:long" minOccurs="0"/>
+<xs:element name="players" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="processRequestResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseObject" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="responseObject">
+<xs:sequence>
+<xs:element name="code" type="xs:int"/>
+<xs:element name="dices" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="games" type="tns:game" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="matrix" type="tns:matrix" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="numberOfThrows" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="matrix">
+<xs:sequence>
+<xs:element name="fields" type="tns:fieldArray" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="rows" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldArray" final="#all">
+<xs:sequence>
+<xs:element name="item" type="tns:field" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
