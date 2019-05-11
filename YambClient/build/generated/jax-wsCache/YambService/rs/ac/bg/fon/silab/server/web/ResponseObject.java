@@ -24,7 +24,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="games" type="{http://web.server.silab.fon.bg.ac.rs/}game" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="matrix" type="{http://web.server.silab.fon.bg.ac.rs/}matrix" minOccurs="0"/>
  *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="myResult" type="{http://web.server.silab.fon.bg.ac.rs/}result" minOccurs="0"/>
  *         &lt;element name="numberOfThrows" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="opponentResults" type="{http://web.server.silab.fon.bg.ac.rs/}result" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +42,9 @@ import javax.xml.bind.annotation.XmlType;
     "games",
     "matrix",
     "message",
-    "numberOfThrows"
+    "myResult",
+    "numberOfThrows",
+    "opponentResults"
 })
 public class ResponseObject {
 
@@ -51,7 +55,10 @@ public class ResponseObject {
     protected List<Game> games;
     protected Matrix matrix;
     protected String message;
+    protected Result myResult;
     protected int numberOfThrows;
+    @XmlElement(nillable = true)
+    protected List<Result> opponentResults;
 
     /**
      * Gets the value of the code property.
@@ -176,6 +183,30 @@ public class ResponseObject {
     }
 
     /**
+     * Gets the value of the myResult property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Result }
+     *     
+     */
+    public Result getMyResult() {
+        return myResult;
+    }
+
+    /**
+     * Sets the value of the myResult property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Result }
+     *     
+     */
+    public void setMyResult(Result value) {
+        this.myResult = value;
+    }
+
+    /**
      * Gets the value of the numberOfThrows property.
      * 
      */
@@ -189,6 +220,35 @@ public class ResponseObject {
      */
     public void setNumberOfThrows(int value) {
         this.numberOfThrows = value;
+    }
+
+    /**
+     * Gets the value of the opponentResults property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the opponentResults property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOpponentResults().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Result }
+     * 
+     * 
+     */
+    public List<Result> getOpponentResults() {
+        if (opponentResults == null) {
+            opponentResults = new ArrayList<Result>();
+        }
+        return this.opponentResults;
     }
 
 }

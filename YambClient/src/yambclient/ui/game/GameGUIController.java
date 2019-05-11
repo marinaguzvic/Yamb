@@ -13,6 +13,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TablePosition;
@@ -24,11 +25,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.TextAlignment;
 import rs.ac.bg.fon.silab.server.web.Field;
 import rs.ac.bg.fon.silab.server.web.FieldArray;
+import rs.ac.bg.fon.silab.server.web.Result;
 import yambclient.controller.GeneralFXMLDocumentController;
 import yambclient.controller.GeneralGUIController;
 import yambclient.session.Session;
 import yambclient.ui.game.listener.BaciKockiceListener;
+import yambclient.ui.game.listener.LogoutListener;
 import yambclient.ui.game.listener.NajaviListener;
+import yambclient.ui.game.listener.RefreshOpponentsListener;
 import yambclient.ui.game.listener.UpisiRezultatListener;
 import yambclient.ui.game.listener.ZapocniIgruListener;
 import yambclient.ui.game.listener.ZavrsiIgruIIzracunajRezultatListener;
@@ -49,6 +53,9 @@ public class GameGUIController extends GeneralGUIController {
         con.getUpisiRezultatBtn().setOnAction(new UpisiRezultatListener(this));
         con.getThrowDicesBtn().setOnAction(new BaciKockiceListener(this));
         con.getStartGameBtn().setOnAction(new ZapocniIgruListener(this));
+        con.getLogoutMenuItem().setOnAction(new LogoutListener(this));
+        con.getRefreshOpponentListBtn().setOnAction(new RefreshOpponentsListener(this));
+        con.getZavrsiIgruBtn().setOnAction(new ZavrsiIgruIIzracunajRezultatListener(this));
         loadImages();
         fillTheFormFromObject();
     }
@@ -65,6 +72,7 @@ public class GameGUIController extends GeneralGUIController {
         upisiRezultatDisabled(con);
         toggleStartGameEnabled(con);
         uncheckAllBoxes(con);
+        fillResultLabels(con);
         return true;
     }
 
@@ -97,7 +105,7 @@ public class GameGUIController extends GeneralGUIController {
         makeColumn(con.getNajava(), "najava");
         con.getTable().setItems(rows);
 //        con.getTable().getColumns().addAll(con.getHeader(), con.getDownwards(), con.getMixed(), con.getUpwards(), con.getNajava());
-        con.getTable().setMinWidth(270);
+        con.getTable().setMinWidth(302);
 //        con.getTable().getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
 //            if (newSelection != null) {
 //                Field field = (Field) newSelection;
@@ -290,6 +298,25 @@ public class GameGUIController extends GeneralGUIController {
     private void uncheckAllBoxes(FXMLDocumentControllerGame con) {
         for (int i = 1; i <= 5; i++) {
             getCheckBox(con, i).setSelected(false);
+        }
+    }
+
+    private void fillResultLabels(FXMLDocumentControllerGame con) {
+        con.getOpponentsVbox().getChildren().clear();
+        for (Result opponentResult : Session.getInstance().getResponse().getOpponentResults()) {
+            Label label = new Label();
+            label.setText(opponentResult.getUsername() + ": " + opponentResult.getResult() + addIfDone(opponentResult.isDone()));
+            con.getOpponentsVbox().getChildren().add(label);
+        }
+        Result result = Session.getInstance().getResponse().getMyResult();
+        con.getUsernameLbl().setText(result.getUsername() + ": " + result.getResult() + addIfDone(result.isDone()));
+    }
+
+    private String addIfDone(boolean done) {
+        if (done) {
+            return " DONE";
+        } else {
+            return "";
         }
     }
 

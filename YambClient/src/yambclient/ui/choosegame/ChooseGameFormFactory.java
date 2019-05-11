@@ -28,7 +28,7 @@ public class ChooseGameFormFactory {
 //        scene.getStylesheets().add("CSS/stylesheet.css");
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Choose game");
+        stage.setTitle("Jamb");
         stage.show();
     }
 }

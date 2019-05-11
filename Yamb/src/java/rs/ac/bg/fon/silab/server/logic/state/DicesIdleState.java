@@ -11,7 +11,7 @@ import rs.ac.bg.fon.silab.lib.matrix.Matrix;
  *
  * @author MARINA
  */
-public class DicesIdleState extends PlayState{
+public class DicesIdleState extends PlayState {
 
     @Override
     public PlayState joinGame() {
@@ -36,8 +36,6 @@ public class DicesIdleState extends PlayState{
         throw new Exception("Trying to perform najavi without throwing");
     }
 
-
-
     @Override
     public PlayState writeResult() {
         return this;
@@ -52,7 +50,7 @@ public class DicesIdleState extends PlayState{
     @Override
     public PlayState endGame() {
         return new GameBrokenState();
-                
+
     }
 
     @Override
@@ -60,5 +58,14 @@ public class DicesIdleState extends PlayState{
         return 0;
     }
 
-    
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
+
 }

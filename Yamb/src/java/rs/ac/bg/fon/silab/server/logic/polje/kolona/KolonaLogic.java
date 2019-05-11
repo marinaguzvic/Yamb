@@ -14,11 +14,11 @@ import rs.ac.bg.fon.silab.lib.domain.DCPolje;
  */
 public abstract class KolonaLogic {
 
-    Long[] resultRows = new Long[]{7L, 10L, 15L};
+    static Long[] resultRows = new Long[]{7L, 10L, 15L};
 
     public abstract Boolean available(int red, List<DCPolje> polja);
 
-    public boolean inResultRows(Long row) {
+    public static boolean inResultRows(Long row) {
         for (Long resultRow : resultRows) {
             if (row == resultRow) {
                 return true;

@@ -73,8 +73,11 @@ public abstract class GeneralGUIController {
             Session.getInstance().setResponse(callSO(IOperation.LOGIN));
             if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
                 try {
-
-                    ChooseGameFormFactory.create();
+                    if (Session.getInstance().getResponse().getMatrix() == null) {
+                        ChooseGameFormFactory.create();
+                    }else{
+                        GameFormFactory.create();
+                    }
                     closeForm();
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -197,6 +200,39 @@ public abstract class GeneralGUIController {
     }
 
     public void zavrsiIgruIIzracunajRezultat() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        request = new RequestObject();
+        Session.getInstance().setResponse(callSO(IOperation.END_GAME));
+        if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
+            fillTheFormFromObject();
+        } else {
+            message(responseMessage());
+        }
+    }
+
+    public void logout() {
+        request = new RequestObject();
+        Session.getInstance().setResponse(callSO(IOperation.LOGOUT));
+        if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
+            try {
+                Session.getInstance().setIgra(null);
+                Session.getInstance().setKorisnik(null);
+                LoginFormFactory.create();
+                closeForm();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } else {
+            message(responseMessage());
+        }
+    }
+
+    public void refreshOpponents() {
+        request = new RequestObject();
+        Session.getInstance().setResponse(callSO(IOperation.REFRESH_OPPONENTS));
+        if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
+            fillTheFormFromObject();
+        } else {
+            message(responseMessage());
+        }
     }
 }

@@ -33,7 +33,6 @@ public class DicesThirdThrowState extends PlayState {
         throw new Exception("Trying to perform najavi after third throw");
     }
 
-    
     @Override
     public PlayState writeResult() {
         return new DicesIdleState();
@@ -43,14 +42,25 @@ public class DicesThirdThrowState extends PlayState {
     public PlayState calculateScore() {
         return this;
     }
+
     @Override
     public PlayState endGame() {
         return new GameBrokenState();
-                
+
     }
 
     @Override
     public int getNumberOfThrows() {
         return 3;
+    }
+
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
     }
 }

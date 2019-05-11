@@ -52,7 +52,9 @@
 <xs:element name="games" type="tns:game" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 <xs:element name="matrix" type="tns:matrix" minOccurs="0"/>
 <xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="myResult" type="tns:result" minOccurs="0"/>
 <xs:element name="numberOfThrows" type="xs:int"/>
+<xs:element name="opponentResults" type="tns:result" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -60,6 +62,14 @@
 <xs:sequence>
 <xs:element name="fields" type="tns:fieldArray" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 <xs:element name="rows" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="result">
+<xs:sequence>
+<xs:element name="done" type="xs:boolean"/>
+<xs:element name="result" type="xs:long" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

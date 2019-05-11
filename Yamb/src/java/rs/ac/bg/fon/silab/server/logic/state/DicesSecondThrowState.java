@@ -11,7 +11,7 @@ import rs.ac.bg.fon.silab.lib.matrix.Matrix;
  *
  * @author MARINA
  */
-public class DicesSecondThrowState extends PlayState{
+public class DicesSecondThrowState extends PlayState {
 
     @Override
     public PlayState joinGame() {
@@ -36,7 +36,6 @@ public class DicesSecondThrowState extends PlayState{
         throw new Exception("Trying to perform najavi after second throw");
     }
 
-
     @Override
     public PlayState writeResult() {
         return new DicesIdleState();
@@ -50,12 +49,21 @@ public class DicesSecondThrowState extends PlayState{
     @Override
     public PlayState endGame() {
         return new GameBrokenState();
-                
+
     }
 
     @Override
     public int getNumberOfThrows() {
         return 2;
     }
-    
+
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
 }

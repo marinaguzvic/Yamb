@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="179.0" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="yambclient.ui.login.FXMLDocumentControllerLogin">
+<AnchorPane id="AnchorPane" prefHeight="179.0" prefWidth="320" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yambclient.ui.login.FXMLDocumentControllerLogin">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <GridPane layoutX="-2.0" layoutY="-3.0" prefHeight="129.0" prefWidth="320.0">
@@ -24,10 +24,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Username:" />
-            <Label text="Password:" GridPane.rowIndex="1" />
+            <Label text="Korisnicko ime:" />
+            <Label text="Sifra:" GridPane.rowIndex="1" />
             <TextField fx:id="username" GridPane.columnIndex="1" />
-            <Button fx:id="login" mnemonicParsing="false" prefHeight="24.0" prefWidth="149.0" text="Log in" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="login" mnemonicParsing="false" prefHeight="24.0" prefWidth="149.0" text="Prijavite se" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
          <padding>

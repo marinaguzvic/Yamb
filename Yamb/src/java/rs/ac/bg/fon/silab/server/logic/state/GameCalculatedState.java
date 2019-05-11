@@ -11,7 +11,7 @@ import rs.ac.bg.fon.silab.lib.matrix.Matrix;
  *
  * @author MARINA
  */
-public class GameCalculatedState extends PlayState{
+public class GameCalculatedState extends PlayState {
 
     @Override
     public PlayState joinGame() {
@@ -33,7 +33,6 @@ public class GameCalculatedState extends PlayState{
         return this;
     }
 
-
     @Override
     public PlayState writeResult() {
         return this;
@@ -43,15 +42,25 @@ public class GameCalculatedState extends PlayState{
     public PlayState calculateScore() {
         return this;
     }
+
     @Override
     public PlayState endGame() {
         return new GameEndedState();
-                
+
     }
 
     @Override
     public int getNumberOfThrows() {
         return 0;
     }
-    
+
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
 }

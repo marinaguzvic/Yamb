@@ -11,6 +11,7 @@ import java.net.URL;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import yambclient.start.YambClient;
@@ -31,7 +32,8 @@ public class GameFormFactory {
 //        scene.getStylesheets().add("CSS/stylesheet.css");
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Log in");
+        stage.getIcons().add(new Image("src/yambclient/images/dices/dice0.png"));
+        stage.setTitle("Jamb");
         stage.show();
         
 //        stage.setOnCloseRequest((WindowEvent we) -> {

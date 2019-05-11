@@ -69,4 +69,14 @@ public class NajavaThirdThrowState extends PlayState implements Najava {
     public int getNumberOfThrows() {
         return 3;
     }
+
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
 }

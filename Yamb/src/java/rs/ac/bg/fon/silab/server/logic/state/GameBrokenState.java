@@ -48,7 +48,16 @@ public class GameBrokenState extends PlayState {
 
     @Override
     public int getNumberOfThrows() {
-            return -1;
+        return -1;
     }
 
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
 }

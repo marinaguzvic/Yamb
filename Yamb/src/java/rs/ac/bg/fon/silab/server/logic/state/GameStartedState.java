@@ -54,4 +54,13 @@ public class GameStartedState extends PlayState {
         return 0;
     }
 
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
 }

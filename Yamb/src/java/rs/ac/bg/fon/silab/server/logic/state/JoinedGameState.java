@@ -53,4 +53,13 @@ public class JoinedGameState extends PlayState {
         return -2;
     }
 
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
 }

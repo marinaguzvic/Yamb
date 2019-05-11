@@ -15,6 +15,7 @@ import rs.ac.bg.fon.silab.lib.matrix.Matrix;
 import rs.ac.bg.fon.silab.lib.transfer.request.RequestObject;
 import rs.ac.bg.fon.silab.lib.transfer.response.ResponseObject;
 import rs.ac.bg.fon.silab.server.controller.Participation;
+import rs.ac.bg.fon.silab.server.db.factory.GeneralDObjectFactory;
 import rs.ac.bg.fon.silab.server.db.operation.AbstractGenericDBOperation;
 import rs.ac.bg.fon.silab.server.db.operation.DBOFindById;
 import rs.ac.bg.fon.silab.server.db.operation.DBOSaveRecord;
@@ -50,7 +51,8 @@ public class JoinGameSO extends AbstractGenericSO {
     public GeneralDObject getNewValue(RequestObject requestObject) throws Exception {
         DBOFindById dbo = new DBOFindById();
         DCIgra igra = DCIgra.getInstance(requestObject.getSelectedGame().getGameId());
-        igra = (DCIgra) dbo.templateExecute(igra);
+        ResultSet rs = dbo.templateExecute(igra);
+        igra = (DCIgra) GeneralDObjectFactory.convertResultSetToObject(rs, igra);
         for (DCMatrica dCMatrica : participation.getIgra().getMatrice()) {
             if (Session.getInstance().getParticipationByKorisnik(dCMatrica.getKorisnik()) == null
                     || Session.getInstance().getParticipationByKorisnik(dCMatrica.getKorisnik()).getIgra() != participation.getIgra()) {

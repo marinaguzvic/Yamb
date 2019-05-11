@@ -22,6 +22,9 @@ public abstract class PlayState {
     public abstract PlayState writeResult();
     public abstract PlayState calculateScore();
     public abstract PlayState endGame();
+    public abstract PlayState login();
+    public abstract PlayState logout ();
+    
     
     public void generateDices(Integer[] dicesKept){
         Integer [] newDices = new Integer[5];

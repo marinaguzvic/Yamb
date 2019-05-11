@@ -30,7 +30,7 @@ public class LoginFormFactory {
 //        scene.getStylesheets().add("CSS/stylesheet.css");
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Log in");
+        stage.setTitle("Jamb");
         stage.show();
         
 //        stage.setOnCloseRequest((WindowEvent we) -> {

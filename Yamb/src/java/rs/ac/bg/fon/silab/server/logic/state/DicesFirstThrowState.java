@@ -59,6 +59,16 @@ public class DicesFirstThrowState extends PlayState{
         return 1;
     }
 
+    @Override
+    public PlayState login() {
+        return this;
+    }
+
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
+
 
     
 }

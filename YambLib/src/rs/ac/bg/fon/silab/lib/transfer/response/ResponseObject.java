@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 import rs.ac.bg.fon.silab.lib.game.Game;
 import rs.ac.bg.fon.silab.lib.matrix.Matrix;
+import rs.ac.bg.fon.silab.lib.result.Result;
 
 /**
  *
@@ -19,6 +20,9 @@ public class ResponseObject implements Serializable{
     private Matrix matrix;
     private Integer [] dices;
     private int numberOfThrows;
+    private List<Result> opponentResults;
+    private Result myResult;
+    
 
     public int getNumberOfThrows() {
         return numberOfThrows;
@@ -50,12 +54,7 @@ public class ResponseObject implements Serializable{
     }
 
 
-    public ResponseObject(int code, Matrix matrix, Integer[] dices, String message) {
-        this.code = code;
-        this.matrix = matrix;
-        this.dices = dices;
-        this.message = message;
-    }
+
     
     
 
@@ -82,6 +81,22 @@ public class ResponseObject implements Serializable{
 
     public void setMatrix(Matrix matrix) {
         this.matrix = matrix;
+    }
+
+    public List<Result> getOpponentResults() {
+        return opponentResults;
+    }
+
+    public void setOpponentResults(List<Result> opponentResults) {
+        this.opponentResults = opponentResults;
+    }
+
+    public Result getMyResult() {
+        return myResult;
+    }
+
+    public void setMyResult(Result myResult) {
+        this.myResult = myResult;
     }
     
     

@@ -18,12 +18,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import rs.ac.bg.fon.silab.server.web.Field;
 import rs.ac.bg.fon.silab.server.web.FieldArray;
@@ -35,7 +37,7 @@ import yambclient.ui.game.table.Row;
  * @author MARINA
  */
 public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController implements Initializable {
-    
+
     @FXML
     private BorderPane borderPane;
     @FXML
@@ -47,15 +49,15 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
     @FXML
     private TableView table;
     @FXML
-    private TableColumn<Row,String> header;
+    private TableColumn<Row, String> header;
     @FXML
-    private TableColumn<Row,Field> downwards;
+    private TableColumn<Row, Field> downwards;
     @FXML
-    private TableColumn<Row,Field> mixed;
+    private TableColumn<Row, Field> mixed;
     @FXML
-    private TableColumn<Row,Field> upwards;
+    private TableColumn<Row, Field> upwards;
     @FXML
-    private TableColumn<Row,Field> najava;
+    private TableColumn<Row, Field> najava;
     @FXML
     private ImageView dice1;
     @FXML
@@ -82,7 +84,7 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
     private Label throwsNo;
     @FXML
     private Button startGameBtn;
-    @FXML 
+    @FXML
     private Button najaviBtn;
     @FXML
     private Button upisiRezultatBtn;
@@ -90,6 +92,57 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
     private TextField poljeText;
     @FXML
     private Button zavrsiIgruBtn;
+    @FXML
+    private MenuItem logoutMenuItem;
+    @FXML
+    private VBox opponentsVbox;
+    @FXML
+    private Label usernameLbl;
+    @FXML
+    private Label resultLbl;
+    @FXML
+    private Button refreshOpponentListBtn;
+
+    public Button getRefreshOpponentListBtn() {
+        return refreshOpponentListBtn;
+    }
+
+    public void setRefreshOpponentListBtn(Button refreshOpponentListBtn) {
+        this.refreshOpponentListBtn = refreshOpponentListBtn;
+    }
+
+    public VBox getOpponentsVbox() {
+        return opponentsVbox;
+    }
+
+    public void setOpponentsVbox(VBox opponentsVbox) {
+        this.opponentsVbox = opponentsVbox;
+    }
+
+    public Label getUsernameLbl() {
+        return usernameLbl;
+    }
+
+    public void setUsernameLbl(Label usernameLbl) {
+        this.usernameLbl = usernameLbl;
+    }
+
+    public Label getResultLbl() {
+        return resultLbl;
+    }
+
+    public void setResultLbl(Label resultLbl) {
+        this.resultLbl = resultLbl;
+    }
+    
+
+    public MenuItem getLogoutMenuItem() {
+        return logoutMenuItem;
+    }
+
+    public void setLogoutMenuItem(MenuItem logoutMenuItem) {
+        this.logoutMenuItem = logoutMenuItem;
+    }
 
     public Button getZavrsiIgruBtn() {
         return zavrsiIgruBtn;
@@ -98,9 +151,9 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
     public void setZavrsiIgruBtn(Button zavrsiIgruBtn) {
         this.zavrsiIgruBtn = zavrsiIgruBtn;
     }
-    
+
     private GameGUIController gameGUIController;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -108,7 +161,7 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
         } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException | IOException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
-    }    
+    }
 
     public TextField getUsername() {
         return username;
@@ -141,8 +194,6 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
     public void setTable(TableView table) {
         this.table = table;
     }
-
-    
 
     public ImageView getDice1() {
         return dice1;
@@ -256,8 +307,6 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
         this.gameGUIController = gameGUIController;
     }
 
-
-
     public TableColumn<Row, Field> getDownwards() {
         return downwards;
     }
@@ -266,40 +315,39 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
         this.downwards = downwards;
     }
 
-    public TableColumn<Row,Field> getMixed() {
+    public TableColumn<Row, Field> getMixed() {
         return mixed;
     }
 
-    public void setMixed(TableColumn<Row,Field> mixed) {
+    public void setMixed(TableColumn<Row, Field> mixed) {
         this.mixed = mixed;
     }
 
-    public TableColumn<Row,Field> getUpwards() {
+    public TableColumn<Row, Field> getUpwards() {
         return upwards;
     }
 
-    public void setUpwards(TableColumn<Row,Field> upwards) {
+    public void setUpwards(TableColumn<Row, Field> upwards) {
         this.upwards = upwards;
     }
 
-    public TableColumn<Row,Field> getNajava() {
+    public TableColumn<Row, Field> getNajava() {
         return najava;
     }
 
-    public void setNajava(TableColumn<Row,Field> najava) {
+    public void setNajava(TableColumn<Row, Field> najava) {
         this.najava = najava;
     }
 
-    public TableColumn<Row,String> getHeader() {
+    public TableColumn<Row, String> getHeader() {
         return header;
     }
 
-    public void setHeader(TableColumn<Row,String> header) {
+    public void setHeader(TableColumn<Row, String> header) {
         this.header = header;
     }
 
-    
-@Override
+    @Override
     public void closeForm() {
         Stage stage = (Stage) username.getScene().getWindow();
         stage.close();
@@ -336,9 +384,5 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
     public void setPoljeText(TextField poljeText) {
         this.poljeText = poljeText;
     }
-    
 
-    
-    
-    
 }

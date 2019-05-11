@@ -4,6 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -15,13 +18,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="780.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yambclient.ui.game.FXMLDocumentControllerGame">
+<AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="780.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yambclient.ui.game.FXMLDocumentControllerGame">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <BorderPane fx:id="borderPane" prefHeight="550.0" prefWidth="780.0">
+      <BorderPane fx:id="borderPane" layoutY="-30.0" prefHeight="746.0" prefWidth="804.0">
          <center>
-            <TableView fx:id="table" prefHeight="550.0" prefWidth="406.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="table" prefHeight="536.0" prefWidth="398.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="header" prefWidth="75.0" styleClass="header" />
                 <TableColumn fx:id="downwards" prefWidth="75.0" text="Downwards" />
@@ -32,7 +36,7 @@
             </TableView>
          </center>
          <right>
-            <VBox prefHeight="550.0" prefWidth="390.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="536.0" prefWidth="388.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
                   <GridPane prefHeight="487.0" prefWidth="311.0">
                     <columnConstraints>
@@ -78,8 +82,8 @@
                         </HBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <Label prefHeight="35.0" prefWidth="146.0" text="Izaberite kockice koje zelite da zadrzite" textAlignment="CENTER" wrapText="true" />
-                              <Button fx:id="throwDicesBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Baci kockice" />
+                              <Label prefHeight="58.0" prefWidth="181.0" text="Izaberite kockice koje zelite da zadrzite" textAlignment="CENTER" wrapText="true" />
+                              <Button fx:id="throwDicesBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="192.0" text="Baci kockice" />
                            </children>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -88,15 +92,18 @@
                         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
                            <children>
                               <Label prefHeight="18.0" prefWidth="114.0" text="Broj bacanja:" />
-                              <Label fx:id="throwsNo" prefHeight="66.0" prefWidth="100.0" />
+                              <Label fx:id="throwsNo" prefHeight="66.0" prefWidth="100.0" textFill="#6121c7">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font></Label>
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <Button fx:id="najaviBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Najavi" />
-                              <Button fx:id="upisiRezultatBtn" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Upisi rezultat" />
+                              <Button fx:id="najaviBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="186.0" text="Najavi" />
+                              <Button fx:id="upisiRezultatBtn" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="202.0" text="Upisi rezultat" />
                               <Label text="Polje:" />
-                              <TextField fx:id="poljeText" />
+                              <TextField fx:id="poljeText" prefHeight="26.0" prefWidth="182.0" />
                            </children>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -104,13 +111,59 @@
                         </VBox>
                      </children>
                   </GridPane>
-                  <Button fx:id="startGameBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="325.0" text="Zapocni igru" />
+                  <Button fx:id="startGameBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Zapocni igru" />
+                  <Button fx:id="zavrsiIgruBtn" layoutX="20.0" layoutY="518.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Zavrsi igru i izracunaj razultat" />
+                  <Button fx:id="refreshOpponentListBtn" layoutX="20.0" layoutY="511.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Osvezi listu protivnika" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </VBox>
          </right>
+         <top>
+            <MenuBar prefHeight="0.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Opcije">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Zatvori" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Pomoc">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="O nama" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Nalog">
+                    <items>
+                      <MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" text="Odjavite se" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <bottom>
+            <HBox prefHeight="86.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="390.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="usernameLbl" />
+                        <Label fx:id="resultLbl" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="opponentsVbox" prefHeight="100.0" prefWidth="390.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </bottom>
       </BorderPane>
     </children>
 </AnchorPane>

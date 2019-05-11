@@ -10,10 +10,13 @@ import rs.ac.bg.fon.silab.lib.transfer.util.IOperation;
 import rs.ac.bg.fon.silab.server.logic.so.AbstractGenericSO;
 import rs.ac.bg.fon.silab.server.logic.so.CalculateResultSO;
 import rs.ac.bg.fon.silab.server.logic.so.CreateNewGameSO;
+import rs.ac.bg.fon.silab.server.logic.so.EndGameAndCalculateResultSO;
 import rs.ac.bg.fon.silab.server.logic.so.GetAllGamesSO;
 import rs.ac.bg.fon.silab.server.logic.so.JoinGameSO;
 import rs.ac.bg.fon.silab.server.logic.so.LoginSO;
+import rs.ac.bg.fon.silab.server.logic.so.LogoutSO;
 import rs.ac.bg.fon.silab.server.logic.so.NajaviSO;
+import rs.ac.bg.fon.silab.server.logic.so.RefreshOpponentsResultsSO;
 import rs.ac.bg.fon.silab.server.logic.so.StartGameSO;
 import rs.ac.bg.fon.silab.server.logic.so.ThrowDicesSO;
 import rs.ac.bg.fon.silab.server.logic.so.WriteResultSO;
@@ -24,8 +27,6 @@ import rs.ac.bg.fon.silab.server.logic.so.WriteResultSO;
  */
 public class SOFactory {
     public static AbstractGenericSO create(RequestObject requestObject){
-        System.out.println("OPERATION");
-        System.out.println(requestObject.getOperation());
         switch(requestObject.getOperation()){
             case IOperation.LOGIN:
                 return new LoginSO();
@@ -43,6 +44,12 @@ public class SOFactory {
                 return new ThrowDicesSO();
             case IOperation.START_GAME:
                 return new StartGameSO();
+            case IOperation.END_GAME:
+                return new EndGameAndCalculateResultSO();
+            case IOperation.REFRESH_OPPONENTS:
+                return new RefreshOpponentsResultsSO();
+            case IOperation.LOGOUT:
+                return new LogoutSO();
             default:
                 return null;
         }

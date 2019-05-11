@@ -19,8 +19,6 @@ public class NajavaFirstThrowState extends PlayState implements Najava {
     public NajavaFirstThrowState(Long najavaRow) {
         this.najavaRow = najavaRow;
     }
-    
-    
 
     @Override
     public PlayState joinGame() {
@@ -55,8 +53,6 @@ public class NajavaFirstThrowState extends PlayState implements Najava {
         return this;
     }
 
-
-
     @Override
     public PlayState endGame() {
         return new GameBrokenState();
@@ -75,6 +71,13 @@ public class NajavaFirstThrowState extends PlayState implements Najava {
         return 1;
     }
 
+    @Override
+    public PlayState login() {
+        return this;
+    }
 
-
+    @Override
+    public PlayState logout() {
+        return new LoggedOutState(this);
+    }
 }
