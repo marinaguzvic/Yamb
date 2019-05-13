@@ -17,6 +17,7 @@ import rs.ac.bg.fon.silab.server.logic.so.LoginSO;
 import rs.ac.bg.fon.silab.server.logic.so.LogoutSO;
 import rs.ac.bg.fon.silab.server.logic.so.NajaviSO;
 import rs.ac.bg.fon.silab.server.logic.so.RefreshOpponentsResultsSO;
+import rs.ac.bg.fon.silab.server.logic.so.ShowWinnerSO;
 import rs.ac.bg.fon.silab.server.logic.so.StartGameSO;
 import rs.ac.bg.fon.silab.server.logic.so.ThrowDicesSO;
 import rs.ac.bg.fon.silab.server.logic.so.WriteResultSO;
@@ -26,8 +27,9 @@ import rs.ac.bg.fon.silab.server.logic.so.WriteResultSO;
  * @author MARINA
  */
 public class SOFactory {
-    public static AbstractGenericSO create(RequestObject requestObject){
-        switch(requestObject.getOperation()){
+
+    public static AbstractGenericSO create(RequestObject requestObject) {
+        switch (requestObject.getOperation()) {
             case IOperation.LOGIN:
                 return new LoginSO();
             case IOperation.CREATE_NEW_GAME:
@@ -48,6 +50,8 @@ public class SOFactory {
                 return new EndGameAndCalculateResultSO();
             case IOperation.REFRESH_OPPONENTS:
                 return new RefreshOpponentsResultsSO();
+            case IOperation.SHOW_WINNER:
+                return new ShowWinnerSO();
             case IOperation.LOGOUT:
                 return new LogoutSO();
             default:

@@ -7,17 +7,23 @@
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/choosegame/ChooseGameGUIController.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/controller/GeneralGUIController.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/listener/ZavrsiIgruIIzracunajRezultatListener.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/login/LoginGUIController.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/images/dices/dice0.png</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/listener/RefreshOpponentsListener.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/listener/LogoutListener.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/css/style.css</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/listener/BaciKockiceListener.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/session/Session.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/util/Constants.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/choosegame/ChooseGameFormFactory.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/listener/UpisiRezultatListener.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/FXMLDocumentControllerGame.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/listener/ShowWinnerListener.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/listener/ZapocniIgruListener.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/GameFormFactory.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/listener/NajaviListener.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/choosegame/listener/CreateGameListener.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/login/LoginFormFactory.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/YambClient/src/yambclient/ui/game/table/Row.java</file>
         </group>
     </open-files>

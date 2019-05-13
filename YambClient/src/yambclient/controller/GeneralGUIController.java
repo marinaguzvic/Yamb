@@ -72,10 +72,11 @@ public abstract class GeneralGUIController {
         try {
             Session.getInstance().setResponse(callSO(IOperation.LOGIN));
             if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
+                message(responseMessage());
                 try {
                     if (Session.getInstance().getResponse().getMatrix() == null) {
                         ChooseGameFormFactory.create();
-                    }else{
+                    } else {
                         GameFormFactory.create();
                     }
                     closeForm();
@@ -103,7 +104,7 @@ public abstract class GeneralGUIController {
             closeForm();
             LoginFormFactory.create();
         }
-
+        message(responseMessage());
     }
 
     public void closeForm() {
@@ -122,7 +123,7 @@ public abstract class GeneralGUIController {
                     ex.printStackTrace();
                 }
             } else {
-                message(responseMessage());
+
                 fillTheEmptyForm();
             }
         } catch (Exception e) {
@@ -130,7 +131,7 @@ public abstract class GeneralGUIController {
             closeForm();
             LoginFormFactory.create();
         }
-
+        message(responseMessage());
     }
 
     public void joinGame() throws IOException {
@@ -138,6 +139,7 @@ public abstract class GeneralGUIController {
         try {
             fillTheObjectFromAForm();
             Session.getInstance().setResponse(callSO(IOperation.JOIN_GAME));
+            message(responseMessage());
             if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
                 try {
                     GameFormFactory.create();
@@ -146,7 +148,7 @@ public abstract class GeneralGUIController {
                     ex.printStackTrace();
                 }
             } else {
-                message(responseMessage());
+
                 fillTheEmptyForm();
             }
         } catch (Exception e) {
@@ -154,6 +156,7 @@ public abstract class GeneralGUIController {
             closeForm();
             LoginFormFactory.create();
         }
+        message(responseMessage());
     }
 
     public void najavi() {
@@ -163,8 +166,9 @@ public abstract class GeneralGUIController {
         if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
             fillTheFormFromObject();
         } else {
-            message(responseMessage());
+
         }
+        message(responseMessage());
     }
 
     public void baciKockice() {
@@ -174,8 +178,9 @@ public abstract class GeneralGUIController {
         if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
             fillTheFormFromObject();
         } else {
-            message(responseMessage());
+
         }
+        message(responseMessage());
     }
 
     public void upisiRezultat() {
@@ -185,8 +190,9 @@ public abstract class GeneralGUIController {
         if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
             fillTheFormFromObject();
         } else {
-            message(responseMessage());
+
         }
+        message(responseMessage());
     }
 
     public void zapocniIgru() {
@@ -195,8 +201,9 @@ public abstract class GeneralGUIController {
         if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
             fillTheFormFromObject();
         } else {
-            message(responseMessage());
+
         }
+        message(responseMessage());
     }
 
     public void zavrsiIgruIIzracunajRezultat() {
@@ -205,8 +212,9 @@ public abstract class GeneralGUIController {
         if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
             fillTheFormFromObject();
         } else {
-            message(responseMessage());
+
         }
+        message(responseMessage());
     }
 
     public void logout() {
@@ -222,8 +230,9 @@ public abstract class GeneralGUIController {
                 ex.printStackTrace();
             }
         } else {
-            message(responseMessage());
+
         }
+        message(responseMessage());
     }
 
     public void refreshOpponents() {
@@ -232,7 +241,25 @@ public abstract class GeneralGUIController {
         if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
             fillTheFormFromObject();
         } else {
-            message(responseMessage());
+
         }
+        message(responseMessage());
+    }
+    
+    public void showWinner(){
+        request = new RequestObject();
+        Session.getInstance().setResponse(callSO(IOperation.SHOW_WINNER));
+        if (Session.getInstance().getResponse().getCode() == IStatus.OK) {
+            try {
+                message(Session.getInstance().getResponse().getWinner());
+                ChooseGameFormFactory.create();
+                closeForm();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } else {
+
+        }
+        message(responseMessage());
     }
 }

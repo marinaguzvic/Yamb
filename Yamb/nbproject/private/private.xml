@@ -11,13 +11,13 @@
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/DicesIdleState.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/kolona/factory/KolonaLogicFactory.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/Polje.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/so/RefreshOpponentsResultsSO.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/db/operation/AbstractGenericDBOperation.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/result/ResultCalculator.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/NajavaThirdThrowState.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/result/ResultCalculatorSuma1.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/red/FiveRedLogic.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/red/ThreeRedLogic.java</file>
-            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/GameEndedState.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/GameStartedState.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/PlayState.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/red/YambRedLogic.java</file>
@@ -30,6 +30,7 @@
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/DicesFirstThrowState.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/result/factory/ResultCalculatorFactory.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/so/CreateNewGameSO.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/LoggedOutState.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/kolona/KolonaLogic.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/so/AbstractGenericSO.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/db/DatabaseRepository.java</file>
@@ -48,6 +49,7 @@
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/so/NajaviSO.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/db/operation/DBOSaveRecord.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/GameCalculatedState.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/so/ShowWinnerSO.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/NajavaSecondThrowState.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/state/Najava.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/red/FourRedLogic.java</file>
@@ -64,6 +66,7 @@
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/so/EndGameAndCalculateResultSO.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/so/LogoutSO.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/red/SixRedLogic.java</file>
+            <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/db/operation/DBOFindById.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/web/YambService.java</file>
             <file>file:/D:/Master/Projektovanje%20softvera/ProjektovanjesoftveraProjektni/Yamb/src/java/rs/ac/bg/fon/silab/server/logic/polje/red/OneRedLogic.java</file>
         </group>

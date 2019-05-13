@@ -33,6 +33,7 @@ import yambclient.ui.game.listener.BaciKockiceListener;
 import yambclient.ui.game.listener.LogoutListener;
 import yambclient.ui.game.listener.NajaviListener;
 import yambclient.ui.game.listener.RefreshOpponentsListener;
+import yambclient.ui.game.listener.ShowWinnerListener;
 import yambclient.ui.game.listener.UpisiRezultatListener;
 import yambclient.ui.game.listener.ZapocniIgruListener;
 import yambclient.ui.game.listener.ZavrsiIgruIIzracunajRezultatListener;
@@ -56,6 +57,7 @@ public class GameGUIController extends GeneralGUIController {
         con.getLogoutMenuItem().setOnAction(new LogoutListener(this));
         con.getRefreshOpponentListBtn().setOnAction(new RefreshOpponentsListener(this));
         con.getZavrsiIgruBtn().setOnAction(new ZavrsiIgruIIzracunajRezultatListener(this));
+        con.getShowWinnerBtn().setOnAction(new ShowWinnerListener(this));
         loadImages();
         fillTheFormFromObject();
     }

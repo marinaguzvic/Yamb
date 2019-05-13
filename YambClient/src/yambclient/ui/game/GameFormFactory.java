@@ -5,6 +5,7 @@
  */
 package yambclient.ui.game;
 
+import java.io.FileInputStream;
 import yambclient.ui.login.*;
 import java.io.IOException;
 import java.net.URL;
@@ -32,7 +33,7 @@ public class GameFormFactory {
 //        scene.getStylesheets().add("CSS/stylesheet.css");
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.getIcons().add(new Image("src/yambclient/images/dices/dice0.png"));
+        stage.getIcons().add(new Image(new FileInputStream("src/yambclient/images/dices/dice0.png")));
         stage.setTitle("Jamb");
         stage.show();
         

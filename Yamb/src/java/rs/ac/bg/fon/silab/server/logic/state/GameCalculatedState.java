@@ -45,7 +45,7 @@ public class GameCalculatedState extends PlayState {
 
     @Override
     public PlayState endGame() {
-        return new GameEndedState();
+        return new LoggedInState();
 
     }
 

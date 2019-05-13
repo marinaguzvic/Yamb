@@ -50,7 +50,7 @@ public class EndGameAndCalculateResultSO extends AbstractGenericSO{
     @Override
     public GeneralDObject getNewValue(RequestObject requestObject) {
         Long result = calculateTotal(participation.getMatrica());
-        participation.getMatrica().setMatricaId(result);
+        participation.getMatrica().setKrajnjiRezultat(result);
         return participation.getMatrica();
     }
 

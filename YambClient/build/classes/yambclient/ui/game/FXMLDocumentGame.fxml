@@ -23,9 +23,9 @@
 <AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="780.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yambclient.ui.game.FXMLDocumentControllerGame">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <BorderPane fx:id="borderPane" layoutY="-30.0" prefHeight="746.0" prefWidth="804.0">
+      <BorderPane fx:id="borderPane" prefHeight="716.0" prefWidth="804.0">
          <center>
-            <TableView fx:id="table" prefHeight="536.0" prefWidth="398.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="table" prefHeight="535.0" prefWidth="416.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="header" prefWidth="75.0" styleClass="header" />
                 <TableColumn fx:id="downwards" prefWidth="75.0" text="Downwards" />
@@ -111,9 +111,6 @@
                         </VBox>
                      </children>
                   </GridPane>
-                  <Button fx:id="startGameBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Zapocni igru" />
-                  <Button fx:id="zavrsiIgruBtn" layoutX="20.0" layoutY="518.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Zavrsi igru i izracunaj razultat" />
-                  <Button fx:id="refreshOpponentListBtn" layoutX="20.0" layoutY="511.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Osvezi listu protivnika" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -142,9 +139,9 @@
             </MenuBar>
          </top>
          <bottom>
-            <HBox prefHeight="86.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="165.0" prefWidth="804.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox prefHeight="100.0" prefWidth="390.0" spacing="5.0">
+                  <VBox prefHeight="86.0" prefWidth="216.0" spacing="5.0">
                      <children>
                         <Label fx:id="usernameLbl" />
                         <Label fx:id="resultLbl" />
@@ -156,7 +153,18 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </VBox>
-                  <VBox fx:id="opponentsVbox" prefHeight="100.0" prefWidth="390.0" spacing="5.0">
+                  <VBox fx:id="opponentsVbox" prefHeight="86.0" prefWidth="198.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="86.0" prefWidth="395.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="startGameBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Zapocni igru" />
+                        <Button fx:id="zavrsiIgruBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Zavrsi igru i izracunaj razultat" />
+                        <Button fx:id="refreshOpponentListBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="386.0" text="Osvezi listu protivnika" />
+                        <Button fx:id="showWinnerBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="494.0" text="Prikazi pobednika igre" />
+                     </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>

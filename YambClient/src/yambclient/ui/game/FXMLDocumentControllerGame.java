@@ -102,6 +102,16 @@ public class FXMLDocumentControllerGame extends GeneralFXMLDocumentController im
     private Label resultLbl;
     @FXML
     private Button refreshOpponentListBtn;
+    @FXML
+    private Button showWinnerBtn;
+
+    public Button getShowWinnerBtn() {
+        return showWinnerBtn;
+    }
+
+    public void setShowWinnerBtn(Button showWinnerBtn) {
+        this.showWinnerBtn = showWinnerBtn;
+    }
 
     public Button getRefreshOpponentListBtn() {
         return refreshOpponentListBtn;

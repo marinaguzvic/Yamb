@@ -21,5 +21,6 @@ public interface IOperation {
     public static final String CALCULTATE_RESULT = "calculate_result";
     public static final String START_GAME = "start_game";
     public static final String END_GAME = "end_game";
+    public static final String SHOW_WINNER = "show_winner";
     public static final String REFRESH_OPPONENTS = "refresh_opponents";
 }

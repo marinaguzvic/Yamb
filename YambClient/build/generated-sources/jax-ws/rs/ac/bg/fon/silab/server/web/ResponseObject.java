@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="myResult" type="{http://web.server.silab.fon.bg.ac.rs/}result" minOccurs="0"/>
  *         &lt;element name="numberOfThrows" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="opponentResults" type="{http://web.server.silab.fon.bg.ac.rs/}result" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="winner" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -44,7 +45,8 @@ import javax.xml.bind.annotation.XmlType;
     "message",
     "myResult",
     "numberOfThrows",
-    "opponentResults"
+    "opponentResults",
+    "winner"
 })
 public class ResponseObject {
 
@@ -59,6 +61,7 @@ public class ResponseObject {
     protected int numberOfThrows;
     @XmlElement(nillable = true)
     protected List<Result> opponentResults;
+    protected String winner;
 
     /**
      * Gets the value of the code property.
@@ -249,6 +252,30 @@ public class ResponseObject {
             opponentResults = new ArrayList<Result>();
         }
         return this.opponentResults;
+    }
+
+    /**
+     * Gets the value of the winner property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getWinner() {
+        return winner;
+    }
+
+    /**
+     * Sets the value of the winner property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setWinner(String value) {
+        this.winner = value;
     }
 
 }

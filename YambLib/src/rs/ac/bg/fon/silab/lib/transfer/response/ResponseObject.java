@@ -22,6 +22,15 @@ public class ResponseObject implements Serializable{
     private int numberOfThrows;
     private List<Result> opponentResults;
     private Result myResult;
+    private String winner;
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
     
 
     public int getNumberOfThrows() {

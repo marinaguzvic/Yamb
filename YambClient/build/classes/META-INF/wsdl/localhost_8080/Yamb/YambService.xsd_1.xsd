@@ -55,6 +55,7 @@
 <xs:element name="myResult" type="tns:result" minOccurs="0"/>
 <xs:element name="numberOfThrows" type="xs:int"/>
 <xs:element name="opponentResults" type="tns:result" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="winner" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

@@ -37,7 +37,13 @@ public class LoginSO extends AbstractGenericSO {
 
     @Override
     public void verifyLoginCredentials(RequestObject requestObject) throws Exception {
-        if(participation != null)return;
+        if (participation != null) {
+            DCKorisnik korisnik = participation.getMatrica().getKorisnik();
+            if (!(korisnik.getKorisnickoIme().equals(requestObject.getKorisnickoIme()) && korisnik.getSifra().equals(requestObject.getSifra()))) {
+                throw new Exception("Wrong credentials!");
+            }
+            return;
+        }
         try {
             AbstractGenericDBOperation dbo = new DBOFindByWhereCondition();
             GeneralDObject gdo = DCKorisnik.getInstance();
@@ -64,7 +70,7 @@ public class LoginSO extends AbstractGenericSO {
     public void switchState(RequestObject requestObject) {
         if (participation.getState() == null) {
             participation.setState(new LoggedInState());
-        }else{
+        } else {
             participation.setState(participation.getState().login());
         }
     }
@@ -76,9 +82,9 @@ public class LoginSO extends AbstractGenericSO {
 
     @Override
     public Matrix generateMatrix() {
-        if(participation.getState() instanceof LoggedInState){
+        if (participation.getState() instanceof LoggedInState) {
             return null;
-        }else{
+        } else {
             return super.generateMatrix();
         }
     }
